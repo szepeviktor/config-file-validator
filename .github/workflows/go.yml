@@ -100,7 +100,7 @@ jobs:
         # Create Badge URL
         # Badge will always be green because of coverage threshold check
         # so we just have to populate the total coverage
-        totalCoverage=11.1
+        totalCoverage=11.2
         BADGE_URL="https://img.shields.io/badge/Coverage-${totalCoverage}%25-brightgreen"
         BADGE_IMG_TAG="<img id=\"cov\" src=\"${BADGE_URL}\" alt=\"Code Coverage\">"
 
