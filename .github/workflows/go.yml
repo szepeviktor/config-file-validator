@@ -100,7 +100,7 @@ jobs:
         # Create Badge URL
         # Badge will always be green because of coverage threshold check
         # so we just have to populate the total coverage
-        totalCoverage=${{ steps.check-coverage.outputs.total_coverage }}
+        totalCoverage=11.1
         BADGE_URL="https://img.shields.io/badge/Coverage-${totalCoverage}%25-brightgreen"
         BADGE_IMG_TAG="<img id=\"cov\" src=\"${BADGE_URL}\" alt=\"Code Coverage\">"
 
@@ -110,6 +110,11 @@ jobs:
         done
 
         # Check to see if files were updated
+        echo diff:
+        git diff --quiet; echo =$?
+        echo status:
+        git status --porcelain; echo =$?
+        echo __END__
         if git diff --quiet; then
           echo "badge_updates=true" >> "${GITHUB_OUTPUT}"
         else
